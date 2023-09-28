@@ -19,6 +19,7 @@ const slides = [
 const leftEl = document.querySelector(".arrow_left")
 const rightEl = document.querySelector(".arrow_right")
 const dots = document.querySelector(".dots")
+const dotsEl = dots.querySelectorAll(".dot");
 const img = document.querySelector(".banner-img")
 const txt = document.querySelector("p")
 let i = 0 
@@ -44,21 +45,14 @@ rightEl.addEventListener("click", function() {
 })	
 
 function dynamicBullets(count) {
-img.src = slides[count].image;
-txt.innerHTML = slides[count].tagLine;
-updateBullets(count);
-}
-
-function updateBullets(count) {
-	const dotsEl = dots.querySelectorAll(".dot");
-	dotsEl.forEach((dot, i) => {
-	  if (i === count) {
-		dot.classList.add("dot_selected");
-	  } else {
-		dot.classList.remove("dot_selected");
-	  }
-	});
-  }
+		dotsEl.forEach((dot, i) => {
+		  if (i === count) {
+			dot.classList.add("dot_selected");
+		  } else {
+			dot.classList.remove("dot_selected");
+		  }
+		});
+	}
   
 
   
